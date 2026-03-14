@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">MY SHOP</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Cart</a></li>
+    </ul>
+  </nav>
+
+  <section class="cart">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <p>Total: RM<span id="total">0</span></p>
+    <button id="clear-cart">Clear Cart</button>
+  </section>
+
+  <script>
+    // Load cart from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let total = parseFloat(localStorage.getItem('total')) || 0;
+
+    const cartContainer = document.getElementById('cart-items');
+    const totalEl = document.getElementById('total');
+
+    function updateCartPage(){
+      cartContainer.innerHTML = '';
+      cart.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <img src="${item.img}" alt="${item.name}">
+          <div class="cart-item-info">
+            <p>${item.name}</p>
+            <p>RM${item.price}</p>
+          </div>
+        `;
+        cartContainer.appendChild(div);
+      });
+      totalEl.textContent = total;
+    }
+
+    updateCartPage();
+
+    // Clear cart button
+    document.getElementById('clear-cart').addEventListener('click', function(){
+      cart = [];
+      total = 0;
+      localStorage.removeItem('cart');
+      localStorage.removeItem('total');
+      updateCartPage();
+      alert('Cart cleared!');
+    });
+  </script>
+</body>
+</html>

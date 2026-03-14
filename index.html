@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">HIFZANG SHOP</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Cart</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Beli buat macam rumoh aok</h1>
+    <p>Premium sportswear for everyone</p>
+    <button>Shop Now</button>
+  </section>
+
+  <!-- Product Grid -->
+  <section class="products">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      <div class="product-card" onclick="openModal('Running Shoe', 'RM299', 'image/shoe1.png')">
+        <img src="image/shoe1.png" alt="Running Shoe">
+        <h3>Running Shoe</h3>
+        <p>RM299</p>
+      </div>
+
+      <div class="product-card" onclick="openModal('Sport T-Shirt', 'RM99', 'image/tshirt1.png')">
+        <img src="image/tshirt1.png" alt="Sport T-Shirt">
+        <h3>Sport T-Shirt</h3>
+        <p>RM99</p>
+      </div>
+
+      <div class="product-card" onclick="openModal('Sports Jacket', 'RM350', 'image/jacket1.png')">
+        <img src="image/jacket1.png" alt="Sports Jacket">
+        <h3>Sports Jacket</h3>
+        <p>RM350</p>
+      </div>
+
+      <div class="product-card" onclick="openModal('Syahid Hifzan', 'RM1000', 'image/syahid1.png')">
+        <img src="image/syahid1.png" alt="Syahid Hifzan">
+        <h3>Syahid Hifzan</h3>
+        <p>RM1000</p>
+      </div>
+
+      <div class="product-card" onclick="openModal('Syahid Hifzan', 'RM1000', 'image/syahid1.png')">
+        <img src="image/syahid1.png" alt="Syahid Hifzan">
+        <h3>Syahid Hifzan</h3>
+        <p>RM1000</p>
+      </div>
+
+      <div class="product-card" onclick="openModal('Syahid Hifzan', 'RM1000', 'image/syahid1.png')">
+        <img src="image/syahid1.png" alt="Syahid Hifzan">
+        <h3>Syahid Hifzan</h3>
+        <p>RM1000</p>
+      </div>
+
+      <div class="product-card" onclick="openModal('Syahid Hifzan', 'RM1000', 'image/syahid1.png')">
+        <img src="image/syahid1.png" alt="Syahid Hifzan">
+        <h3>Syahid Hifzan</h3>
+        <p>RM1000</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modal-img" src="" alt="">
+      <h3 id="modal-name"></h3>
+      <p id="modal-price"></p>
+      <button onclick="addToCartModal()">Add to Cart</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
