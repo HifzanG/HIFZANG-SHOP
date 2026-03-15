@@ -1,89 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Shop</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MY SHOP ULTRA</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <div class="logo">HIFZANG SHOP</div>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">Cart</a></li>
-    </ul>
-  </nav>
+<nav>
+<div class="logo">MY SHOP</div>
+<input type="text" id="search" placeholder="Search products...">
+<div class="nav-right">
+<button id="darkToggle" onclick="toggleDark()">
+<span id="darkIcon">🌙</span>
+</button>
+<a href="cart.html">🛒</a>
+</div>
+</nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Beli buat macam rumoh aok</h1>
-    <p>Premium sportswear for everyone</p>
-    <button>Shop Now</button>
-  </section>
+<section class="hero">
+<video autoplay muted loop playsinline>
+<source src="image/testrun1.mp4" type="video/mp4">
+</video>
+<div class="hero-text">
+<h1>Step Into Style</h1>
+<p>Premium Sportswear</p>
+<button onclick="scrollProducts()">Shop Now</button>
+</div>
+</section>
 
-  <!-- Product Grid -->
-  <section class="products">
-    <h2>Featured Products</h2>
-    <div class="product-grid">
-      <div class="product-card" onclick="openModal('Running Shoe', 'RM299', 'image/shoe1.png')">
-        <img src="image/shoe1.png" alt="Running Shoe">
-        <h3>Running Shoe</h3>
-        <p>RM299</p>
-      </div>
+<section class="products" id="products">
+<h2>Featured Products</h2>
+<div class="product-grid">
 
-      <div class="product-card" onclick="openModal('Sport T-Shirt', 'RM99', 'image/tshirt1.png')">
-        <img src="image/tshirt1.png" alt="Sport T-Shirt">
-        <h3>Sport T-Shirt</h3>
-        <p>RM99</p>
-      </div>
+<div class="product-card" data-name="Running Shoe">
+<img src="image/shoe1.png">
+<h3>Running Shoe</h3>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<p>RM299</p>
+<div class="buttons">
+<button onclick="addCart('Running Shoe',299,'image/shoe1.png')">Add Cart</button>
+<button onclick="addWish('Running Shoe',299,'image/shoe1.png')">❤️</button>
+</div>
+</div>
 
-      <div class="product-card" onclick="openModal('Sports Jacket', 'RM350', 'image/jacket1.png')">
-        <img src="image/jacket1.png" alt="Sports Jacket">
-        <h3>Sports Jacket</h3>
-        <p>RM350</p>
-      </div>
+<div class="product-card" data-name="Sport T-Shirt">
+<img src="image/tshirt1.png">
+<h3>Sport T-Shirt</h3>
+<div class="rating">⭐⭐⭐⭐</div>
+<p>RM99</p>
+<div class="buttons">
+<button onclick="addCart('Sport T-Shirt',99,'image/tshirt1.png')">Add Cart</button>
+<button onclick="addWish('Sport T-Shirt',99,'image/tshirt1.png')">❤️</button>
+</div>
+</div>
 
-      <div class="product-card" onclick="openModal('Syahid Hifzan', 'RM1000', 'image/syahid1.png')">
-        <img src="image/syahid1.png" alt="Syahid Hifzan">
-        <h3>Syahid Hifzan</h3>
-        <p>RM1000</p>
-      </div>
+<div class="product-card" data-name="Sports Jacket">
+<img src="image/jacket1.png">
+<h3>Sports Jacket</h3>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<p>RM350</p>
+<div class="buttons">
+<button onclick="addCart('Sports Jacket',350,'image/jacket1.png')">Add Cart</button>
+<button onclick="addWish('Sports Jacket',350,'image/jacket1.png')">❤️</button>
+</div>
+</div>
 
-      <div class="product-card" onclick="openModal('Syahid Hifzan', 'RM1000', 'image/syahid1.png')">
-        <img src="image/syahid1.png" alt="Syahid Hifzan">
-        <h3>Syahid Hifzan</h3>
-        <p>RM1000</p>
-      </div>
+<div class="product-card" data-name="Syahid Hifzan (NOT FOR SALE!)">
+<img src="image/syahid2.png">
+<h3>Syahid Hifzan (NOT FOR SALE!!)</h3>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<p>RM100000</p>
+<div class="buttons">
+<button onclick="addCart('Syahid Hifzan (NOT FOR SALE!)',100000,'image/syahid2.png')">Add Cart</button>
+<button onclick="addWish('Syahid Hifzan (NOT FOR SALE!)',100000,'image/syahid2.png')">❤️</button>
+</div>
+</div>
 
-      <div class="product-card" onclick="openModal('Syahid Hifzan', 'RM1000', 'image/syahid1.png')">
-        <img src="image/syahid1.png" alt="Syahid Hifzan">
-        <h3>Syahid Hifzan</h3>
-        <p>RM1000</p>
-      </div>
+</div>
+</section>
 
-      <div class="product-card" onclick="openModal('Syahid Hifzan', 'RM1000', 'image/syahid1.png')">
-        <img src="image/syahid1.png" alt="Syahid Hifzan">
-        <h3>Syahid Hifzan</h3>
-        <p>RM1000</p>
-      </div>
-    </div>
-  </section>
+<section class="slider">
+<h2>Trending Products</h2>
+<div class="slider-container">
+<div class="slide"><img src="image/shoe1.png"><p>Running Shoe</p></div>
+<div class="slide"><img src="image/tshirt1.png"><p>Sport T-Shirt</p></div>
+<div class="slide"><img src="image/jacket1.png"><p>Sports Jacket</p></div>
+</div>
+</section>
 
-  <!-- Modal -->
-  <div id="productModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <img id="modal-img" src="" alt="">
-      <h3 id="modal-name"></h3>
-      <p id="modal-price"></p>
-      <button onclick="addToCartModal()">Add to Cart</button>
-    </div>
-  </div>
+<div class="floating-cart" onclick="goCart()">🛒</div>
+<div id="toast"></div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
